@@ -1,0 +1,28 @@
+name: lint-and-test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install lint tools
+        run: pip install ruff
+      - name: Run ruff
+        run: ruff check . --exclude "*/notebooks/*"
+
+  # Add module-specific test jobs here as projects mature, e.g.:
+  # test-module-01:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - run: pip install -r 01-deep-transformer-architectures/requirements.txt
+  #     - run: pytest 01-deep-transformer-architectures/src/

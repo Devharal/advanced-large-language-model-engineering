@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Models & data (too large for git — document download steps instead)
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.ckpt
+data/raw/
+data/processed/
+models/
+checkpoints/
+
+# Environment / secrets
+.env
+*.key
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+wandb/
+mlruns/

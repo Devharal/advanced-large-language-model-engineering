@@ -1,0 +1,15 @@
+# Core / shared across most modules. Module-specific heavy deps (bitsandbytes,
+# vllm, faiss-gpu, neo4j, etc.) live in each module's own requirements.txt to
+# avoid one bloated environment.
+
+torch>=2.2
+numpy
+einops
+transformers>=4.40
+datasets
+accelerate
+tqdm
+matplotlib
+pandas
+jupyter
+pyyaml
