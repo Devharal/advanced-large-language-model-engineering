@@ -727,8 +727,7 @@ def main():
     cfg = ModelConfig(
         d_model=512, n_heads=8, n_kv_heads=4,
         n_layers=6, vocab_size=4096, dtype=torch.float16
-    )
-#dev
+
     print(f"\nModel: {cfg.n_layers}L × d{cfg.d_model} × {cfg.n_heads}H (kv:{cfg.n_kv_heads})")
     print(f"Weights: {cfg.weight_bytes()/1e6:.1f} MB")
 
